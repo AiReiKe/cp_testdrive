@@ -1,1 +1,19 @@
-
+Locales['tc'] = {
+    ['testVeh'] = '你花費 ~y~$%s~s~ , 試駕 ~b~%s~s~',
+    ['awaiting_model'] = '車輛讀取中',
+    ['testTime'] = '剩餘試駕時間: ~r~%s~s~秒',
+    ['press_stop_test'] = '可歸還載具結束試駕',
+    ['press_to_return'] = '~y~[E]~s~ 歸還試駕載具',
+    ['return_blip'] = '歸還試駕載具',
+    ['generic_shopitem'] = '$%s',
+    ['testdrive'] = '車輛試駕 ($%s/輛)',
+    ['testdrive_vehicle'] = '是否要試駕 %s <span style="color:green;">$%s</span>, 花費 <span style="color:yellow;">$%s</span>',
+    ['no'] = '否',
+    ['yes'] = '是',
+    ['not_enough_money'] = '需現金 ~y~$%s~s~',
+    ['no_vehicle_space'] = '出入口已被擋住',
+    ['vehicle_not_exist'] = '車輛 ~y~%s~s~ 並不存在, 請聯絡試駕中心',
+    ['map_blip'] = '試駕中心',
+    ['press_to_test'] = '~y~[E]~s~ 試駕中心',
+    ['testdrive_close'] = '試駕中心已關閉',
+}
