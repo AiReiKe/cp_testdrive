@@ -6,8 +6,8 @@ local vehicles, categories = {}, {}
 local sqlLoad = false
 
 MySQL.ready(function()
-    categories = MySQL.Sync.execute("SELECT * FROM `vehicle_categories`", {})
-    local data = MySQL.Sync.execute("SELECT * FROM `vehicles`")
+    categories = MySQL.query.await("SELECT * FROM `vehicle_categories`", {})
+    local data = MySQL.query.await("SELECT * FROM `vehicles`")
     for i = 1, #data, 1 do
         if data[i].category and not vehicles[data[i].category] then
             vehicles[data[i].category] = {}
@@ -38,3 +38,5 @@ ESX.RegisterServerCallback("cp_testdrive:haveEnoughMoney", function(source, cb, 
         cb(false)
     end
 end)
+
+print("This script is created by AiReiKe")
