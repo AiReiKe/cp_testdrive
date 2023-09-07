@@ -1,2 +1,5 @@
 # cp_testdrive
-Simple test drive script
+幫 Cyber City 寫的試駕系統
+簡單的小插件 順便發上來分享
+**!!!免費插件嚴禁轉賣!!!**
+短期內應該不會更新這個插件
