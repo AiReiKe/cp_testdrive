@@ -91,6 +91,7 @@ local function TestDriveVehicle(model)
         SetModelAsNoLongerNeeded(model)
         GiveKey(testVeh)
         SetFuel(testVeh, 100)
+	SetVehicleDoorsLocked(testVeh, 2)
         TriggerServerEvent("cp_testdrive:setTestVehcle", VehToNet(testVeh))
     end)
     inShop = false
