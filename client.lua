@@ -91,6 +91,7 @@ local function TestDriveVehicle(model)
         SetModelAsNoLongerNeeded(model)
         GiveKey(testVeh)
         SetFuel(testVeh, 100)
+        TriggerServerEvent("cp_testdrive:setTestVehcle", VehToNet(testVeh))
     end)
     inShop = false
     while not IsPedInVehicle(ped, testVeh) do
@@ -116,6 +117,7 @@ local function TestDriveVehicle(model)
             DeleteEntity(testVeh)
         end
         testVeh = nil
+        TriggerServerEvent("cp_testdrive:setTestVehcle", nil)
         if Config.TeleportEnd then
             SetEntityCoords(ped, Config.ShopCoords)
         end
@@ -354,6 +356,7 @@ AddEventHandler("onResourceStop", function(resource)
                 DeleteEntity(testVeh)
             end
             testVeh = nil
+            TriggerServerEvent("cp_testdrive:setTestVehcle", nil)
             ESX.ShowNotification(_U("testdrive_close"), 'error')
             if Config.TeleportEnd then
                 SetEntityCoords(PlayerPedId(), Config.ShopCoords)

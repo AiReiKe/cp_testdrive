@@ -2,7 +2,7 @@ if not ESX then
     TriggerEvent("esx:getSharedObject", function(obj) ESX = obj end)
 end
 
-local vehicles, categories = {}, {}
+local vehicles, categories, testVeh = {}, {}, {}
 local sqlLoad = false
 
 MySQL.ready(function()
@@ -36,6 +36,23 @@ ESX.RegisterServerCallback("cp_testdrive:haveEnoughMoney", function(source, cb, 
         cb(true)
     else
         cb(false)
+    end
+end)
+
+RegisterNetEvent("cp_testdrive:setTestVehcle")
+AddEventHandler("cp_testdrive:setTestVehcle", function(netID)
+    local src = source
+    if netID then
+        testVeh[tostring(src)] = NetworkGetEntityFromNetworkId(netID)
+    else
+        testVeh[tostring(src)] = nil
+    end
+end)
+
+AddEventHandler('esx:playerDropped', function(playerId, reason)
+    if testVeh[tostring(playerId)] then
+        DeleteEntity(testVeh[tostring(playerId)])
+        testVeh[tostring(playerId)] = nil
     end
 end)
 
